@@ -1,0 +1,1 @@
+"""PyQt6 windows, pages and widgets."""

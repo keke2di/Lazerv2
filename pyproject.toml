@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lazerv2"
+version = "2.0.0"
+description = "Bulk-delete your own Discord messages and wipe conversations with a keyword guard."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "PyQt6>=6.4.2,<7",
+    "requests>=2.31.0,<3",
+    "cryptography>=42.0.5,<50",
+]
+keywords = ["discord", "purge", "delete", "guard", "pyqt6"]
+classifiers = [
+    "Environment :: X11 Applications :: Qt",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+lazerv2 = "lazerv2.app:main"
+lazerv2-guard = "lazerv2.tray_daemon:main"
+
+[tool.setuptools.packages.find]
+include = ["lazerv2*"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 110
+exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "B"]
+ignore = ["E501", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

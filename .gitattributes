@@ -1,0 +1,17 @@
+# one line-ending style in the repository, whatever each editor writes.
+# The working copy mixes CRLF and LF today; git stores these as LF and checks
+# them out as LF. Python and Qt read either, so nothing breaks on Windows.
+* text=auto
+
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.toml text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+LICENSE        text eol=lf
+
+*.png  binary
+*.ico  binary

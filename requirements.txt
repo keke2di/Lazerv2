@@ -1,0 +1,9 @@
+# Developed and tested on PyQt6 6.10.2 / requests 2.32.5 / cryptography 46.0.5.
+#
+# QtSvg (icons) and QtWebSockets (presence) ship inside the PyQt6 wheel, so
+# there's nothing extra to install. On some Linux distros PyQt6 is split into
+# separate packages though - if presence or icons fail to import, grab
+# python3-pyqt6.qtwebsockets and python3-pyqt6.qtsvg.
+PyQt6>=6.4.2,<7
+requests>=2.31.0,<3
+cryptography>=42.0.5,<50
